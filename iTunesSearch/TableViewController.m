@@ -19,10 +19,15 @@
 
 @implementation TableViewController
 
+NSString *termo = @"";
+
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [_tableview setDelegate: self];
+    _tableview.dataSource = self;
     
     UINib *nib = [UINib nibWithNibName:@"TableViewCell" bundle:nil];
     [self.tableview registerNib:nib forCellReuseIdentifier:@"celulaPadrao"];
@@ -55,7 +60,9 @@
     Filme *filme = [midias objectAtIndex:indexPath.row];
     
     [celula.nome setText:filme.nome];
+    [celula.artista setText:filme.artista];
     [celula.tipo setText:@"Filme"];
+    [celula.preco setText:[NSString stringWithFormat:@"Preço: %@",filme.preco]];
     
     return celula;
 }
@@ -64,5 +71,14 @@
     return 70;
 }
 
+
+- (IBAction)buscar:(id)sender {
+    termo = [self.busca text];
+    iTunesManager *itunes = [iTunesManager sharedInstance];
+    midias =[itunes buscarMidias:termo];
+    [self.tableview reloadData];
+    [_busca resignFirstResponder];
+    self.busca.text = @"";
+}
 
 @end

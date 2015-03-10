@@ -11,7 +11,13 @@
 @interface TableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 
+
+@property (strong, nonatomic) IBOutlet UIView *view;
+@property (strong, nonatomic) IBOutlet UITextField *busca;
 @property (strong, nonatomic) IBOutlet UITableView *tableview;
+
+- (IBAction)buscar:(id)sender;
+
 
 @end
 
