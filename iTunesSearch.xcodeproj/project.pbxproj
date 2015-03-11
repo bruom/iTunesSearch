@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1531ED6B1AB0C54700CA5FCD /* MusicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1531ED691AB0C54700CA5FCD /* MusicTableViewCell.m */; };
+		1531ED6C1AB0C54700CA5FCD /* MusicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1531ED6A1AB0C54700CA5FCD /* MusicTableViewCell.xib */; };
+		1531ED6F1AB0C95E00CA5FCD /* Midia.m in Sources */ = {isa = PBXBuildFile; fileRef = 1531ED6E1AB0C95E00CA5FCD /* Midia.m */; };
+		155A5F3B1AAF8884000ED33A /* Musica.m in Sources */ = {isa = PBXBuildFile; fileRef = 155A5F3A1AAF8884000ED33A /* Musica.m */; };
+		155A5F3E1AAF8896000ED33A /* Podcast.m in Sources */ = {isa = PBXBuildFile; fileRef = 155A5F3D1AAF8896000ED33A /* Podcast.m */; };
+		155A5F411AAF88A2000ED33A /* Ebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 155A5F401AAF88A2000ED33A /* Ebook.m */; };
 		92C21CB61AAE757A0052ABE6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C21CB51AAE757A0052ABE6 /* main.m */; };
 		92C21CB91AAE757A0052ABE6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C21CB81AAE757A0052ABE6 /* AppDelegate.m */; };
 		92C21CBC1AAE757A0052ABE6 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C21CBB1AAE757A0052ABE6 /* TableViewController.m */; };
@@ -30,6 +36,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1531ED681AB0C54700CA5FCD /* MusicTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicTableViewCell.h; sourceTree = "<group>"; };
+		1531ED691AB0C54700CA5FCD /* MusicTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicTableViewCell.m; sourceTree = "<group>"; };
+		1531ED6A1AB0C54700CA5FCD /* MusicTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MusicTableViewCell.xib; sourceTree = "<group>"; };
+		1531ED6D1AB0C95E00CA5FCD /* Midia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Midia.h; path = Entidades/Midia.h; sourceTree = "<group>"; };
+		1531ED6E1AB0C95E00CA5FCD /* Midia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Midia.m; path = Entidades/Midia.m; sourceTree = "<group>"; };
+		155A5F391AAF8884000ED33A /* Musica.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Musica.h; path = Entidades/Musica.h; sourceTree = "<group>"; };
+		155A5F3A1AAF8884000ED33A /* Musica.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Musica.m; path = Entidades/Musica.m; sourceTree = "<group>"; };
+		155A5F3C1AAF8896000ED33A /* Podcast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Podcast.h; path = Entidades/Podcast.h; sourceTree = "<group>"; };
+		155A5F3D1AAF8896000ED33A /* Podcast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Podcast.m; path = Entidades/Podcast.m; sourceTree = "<group>"; };
+		155A5F3F1AAF88A2000ED33A /* Ebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ebook.h; path = Entidades/Ebook.h; sourceTree = "<group>"; };
+		155A5F401AAF88A2000ED33A /* Ebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Ebook.m; path = Entidades/Ebook.m; sourceTree = "<group>"; };
 		92C21CB01AAE757A0052ABE6 /* iTunesSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92C21CB41AAE757A0052ABE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92C21CB51AAE757A0052ABE6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -137,6 +154,9 @@
 				92C21CDE1AAE76930052ABE6 /* TableViewCell.h */,
 				92C21CDF1AAE76930052ABE6 /* TableViewCell.m */,
 				92C21CE01AAE76930052ABE6 /* TableViewCell.xib */,
+				1531ED681AB0C54700CA5FCD /* MusicTableViewCell.h */,
+				1531ED691AB0C54700CA5FCD /* MusicTableViewCell.m */,
+				1531ED6A1AB0C54700CA5FCD /* MusicTableViewCell.xib */,
 			);
 			name = Celulas;
 			sourceTree = "<group>";
@@ -146,6 +166,14 @@
 			children = (
 				92C21CE61AAE858E0052ABE6 /* Filme.h */,
 				92C21CE71AAE858E0052ABE6 /* Filme.m */,
+				155A5F391AAF8884000ED33A /* Musica.h */,
+				155A5F3A1AAF8884000ED33A /* Musica.m */,
+				155A5F3C1AAF8896000ED33A /* Podcast.h */,
+				155A5F3D1AAF8896000ED33A /* Podcast.m */,
+				155A5F3F1AAF88A2000ED33A /* Ebook.h */,
+				155A5F401AAF88A2000ED33A /* Ebook.m */,
+				1531ED6D1AB0C95E00CA5FCD /* Midia.h */,
+				1531ED6E1AB0C95E00CA5FCD /* Midia.m */,
 			);
 			name = Entidades;
 			sourceTree = "<group>";
@@ -233,6 +261,7 @@
 				92C21CC11AAE757A0052ABE6 /* Images.xcassets in Resources */,
 				92C21CE21AAE76930052ABE6 /* TableViewCell.xib in Resources */,
 				92C21CDD1AAE75DC0052ABE6 /* TableView.xib in Resources */,
+				1531ED6C1AB0C54700CA5FCD /* MusicTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,11 +279,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				155A5F411AAF88A2000ED33A /* Ebook.m in Sources */,
+				1531ED6B1AB0C54700CA5FCD /* MusicTableViewCell.m in Sources */,
 				92C21CBC1AAE757A0052ABE6 /* TableViewController.m in Sources */,
+				155A5F3B1AAF8884000ED33A /* Musica.m in Sources */,
+				155A5F3E1AAF8896000ED33A /* Podcast.m in Sources */,
 				92C21CDB1AAE75B30052ABE6 /* iTunesManager.m in Sources */,
 				92C21CB91AAE757A0052ABE6 /* AppDelegate.m in Sources */,
 				92C21CE81AAE858E0052ABE6 /* Filme.m in Sources */,
 				92C21CE11AAE76930052ABE6 /* TableViewCell.m in Sources */,
+				1531ED6F1AB0C95E00CA5FCD /* Midia.m in Sources */,
 				92C21CB61AAE757A0052ABE6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
