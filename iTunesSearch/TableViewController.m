@@ -14,6 +14,7 @@
 #import "Musica.h"
 #import "Podcast.h"
 #import "Ebook.h"
+#import "DetailsViewController.h"
 
 @interface TableViewController () {
     NSArray *midias;
@@ -55,8 +56,8 @@ NSMutableArray *ebooks;
     
     
     
-#warning Necessario para que a table view tenha um espaco em relacao ao topo, pois caso contrario o texto ficara atras da barra superior
-    self.tableview.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.tableview.bounds.size.width, 15.f)];
+//#warning Necessario para que a table view tenha um espaco em relacao ao topo, pois caso contrario o texto ficara atras da barra superior
+    //self.tableview.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.tableview.bounds.size.width, 0.0f)];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -85,7 +86,7 @@ NSMutableArray *ebooks;
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TableViewCell *celula = [self.tableview dequeueReusableCellWithIdentifier:@"celulaPadrao"];
     
-    long row = [indexPath row];
+    //long row = [indexPath row];
     if(indexPath.section==0){
         //TableViewCell *celula = [self.tableview dequeueReusableCellWithIdentifier:@"celulaPadrao"];
         Filme *filme = [filmes objectAtIndex:[indexPath row]];
@@ -120,6 +121,11 @@ NSMutableArray *ebooks;
     }
     
     return celula;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    DetailsViewController *details = [[DetailsViewController alloc]init];
+    [self.navigationController pushViewController:details animated:YES];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
