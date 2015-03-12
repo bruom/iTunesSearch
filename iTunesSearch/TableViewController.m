@@ -94,6 +94,11 @@ NSMutableArray *ebooks;
         [celula.artista setText:filme.artista];
         [celula.tipo setText:@"Filme"];
         [celula.preco setText:[NSString stringWithFormat:@"Preço: %@",filme.preco]];
+        NSURL *url = [NSURL URLWithString:filme.urlImg];
+        NSData *imgData = [NSData dataWithContentsOfURL:url];
+        UIImage *img = [UIImage imageWithData:imgData];
+        [celula.imagem setImage:img];
+        
     }
     if(indexPath.section==1){
         //MusicTableViewCell *celula = [self.tableview dequeueReusableCellWithIdentifier:@"musicCell"];
@@ -102,6 +107,10 @@ NSMutableArray *ebooks;
         [celula.artista setText:musica.artista];
         [celula.tipo setText:@"Musica"];
         [celula.preco setText:[NSString stringWithFormat:@"Preço: %@",musica.preco]];
+        NSURL *url = [NSURL URLWithString:musica.urlImg];
+        NSData *imgData = [NSData dataWithContentsOfURL:url];
+        UIImage *img = [UIImage imageWithData:imgData];
+        [celula.imagem setImage:img];
         //return celula;
     }
     if(indexPath.section==2){
@@ -111,13 +120,22 @@ NSMutableArray *ebooks;
         [celula.artista setText:podcast.artista];
         [celula.tipo setText:@"Podcast"];
         [celula.preco setText:[NSString stringWithFormat:@"Preço: %@",podcast.preco]];
-    }if(indexPath.section==3){
+        NSURL *url = [NSURL URLWithString:podcast.urlImg];
+        NSData *imgData = [NSData dataWithContentsOfURL:url];
+        UIImage *img = [UIImage imageWithData:imgData];
+        [celula.imagem setImage:img];
+    }
+    if(indexPath.section==3){
         //TableViewCell *celula = [self.tableview dequeueReusableCellWithIdentifier:@"celulaPadrao"];
         Ebook *ebook = [ebooks objectAtIndex:[indexPath row]];
         [celula.nome setText:ebook.nome];
         [celula.artista setText:ebook.artista];
         [celula.tipo setText:@"Ebook"];
         [celula.preco setText:[NSString stringWithFormat:@"Preço: %@",ebook.preco]];
+        NSURL *url = [NSURL URLWithString:ebook.urlImg];
+        NSData *imgData = [NSData dataWithContentsOfURL:url];
+        UIImage *img = [UIImage imageWithData:imgData];
+        [celula.imagem setImage:img];
     }
     
     return celula;
@@ -129,14 +147,13 @@ NSMutableArray *ebooks;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 70;
+    return 80;
 }
 
 
 - (IBAction)buscar:(id)sender {
-    termo = [self.busca text];
     iTunesManager *itunes = [iTunesManager sharedInstance];
-    midias =[itunes buscarMidias:termo];
+    midias =[itunes buscarMidias:self.busca.text];
     [self categorizaMidia];
     [self.tableview reloadData];
     [_busca resignFirstResponder];

@@ -62,6 +62,7 @@ static bool isFirstAccess = YES;
         [aux setTrackId:[item objectForKey:@"trackId"]];
         [aux setArtista:[item objectForKey:@"artistName"]];
         [aux setPreco:[item objectForKey:@"trackPrice"]];
+        [aux setUrlImg:[item objectForKey:@"artworkUrl60"]];
 
     };
     

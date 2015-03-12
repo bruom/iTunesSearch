@@ -14,5 +14,6 @@
 @property (nonatomic, strong) NSString *trackId;
 @property (nonatomic, strong) NSString *artista;
 @property (nonatomic, strong) NSNumber *preco;
+@property (nonatomic, strong) NSString *urlImg;
 
 @end
