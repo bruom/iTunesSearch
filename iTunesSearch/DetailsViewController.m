@@ -22,15 +22,19 @@
     // Do any additional setup after loading the view from its nib.
     if([midia isMemberOfClass:[Filme class]]){
         self.navigationItem.title = @"Filme";
+        self.tipo.text = @"Filme";
     }
     if([midia isMemberOfClass:[Musica class]]){
         self.navigationItem.title = @"Musica";
+        self.tipo.text = @"Musica";
     }
     if([midia isMemberOfClass:[Podcast class]]){
         self.navigationItem.title = @"Podcast";
+        self.tipo.text = @"Podcast";
     }
     if([midia isMemberOfClass:[Ebook class]]){
         self.navigationItem.title = @"Ebook";
+        self.tipo.text = @"Ebook";
     }
     self.nome.text = midia.nome;
     self.preco.text = [NSString stringWithFormat:@"Preço: %@",midia.preco];

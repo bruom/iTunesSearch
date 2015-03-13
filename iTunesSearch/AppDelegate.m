@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 
-#warning Classe importada para uso no metodo de inicilizacao da App
+//#warning Classe importada para uso no metodo de inicilizacao da App
 #import "TableViewController.h"
 
 @interface AppDelegate ()
@@ -20,12 +20,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-#warning Necessário para inicializar a aplicacao sem storyboard
+//#warning Necessário para inicializar a aplicacao sem storyboard
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
 
-#warning Adicionado codigo para iniciar com a interface do TableView
+//#warning Adicionado codigo para iniciar com a interface do TableView
     //TableViewController *tvc = [[TableViewController alloc] initWithNibName:@"TableView" bundle:nil];
     TableViewController *tvc = [[TableViewController alloc] init];
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:tvc];
