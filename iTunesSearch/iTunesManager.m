@@ -52,10 +52,10 @@ static bool isFirstAccess = YES;
     
     NSArray *resultados = [resultado objectForKey:@"results"];
     NSMutableArray *midias = [[NSMutableArray alloc]init];
-//    NSMutableArray *filmes = [[NSMutableArray alloc] init];
-//    NSMutableArray *musicas = [[NSMutableArray alloc] init];
-//    NSMutableArray *podcasts = [[NSMutableArray alloc] init];
-//    NSMutableArray *ebooks = [[NSMutableArray alloc] init];
+    NSMutableArray *filmes = [[NSMutableArray alloc] init];
+    NSMutableArray *musicas = [[NSMutableArray alloc] init];
+    NSMutableArray *podcasts = [[NSMutableArray alloc] init];
+    NSMutableArray *ebooks = [[NSMutableArray alloc] init];
     
     void(^setMidia)(Midia*,NSDictionary*)=^(Midia *aux, NSDictionary *item){
         [aux setNome:[item objectForKey:@"trackName"]];
@@ -75,7 +75,7 @@ static bool isFirstAccess = YES;
             [filme setDuracao:[item objectForKey:@"trackTimeMillis"]];
             [filme setGenero:[item objectForKey:@"primaryGenreName"]];
             [filme setPais:[item objectForKey:@"country"]];
-            [midias addObject:filme];
+            [filmes addObject:filme];
         }
         
         //MUSICA
@@ -84,7 +84,7 @@ static bool isFirstAccess = YES;
             setMidia(musica, item);
             [musica setAlbum:[item objectForKey:@"collectionName"]];
             [musica setPais:[item objectForKey:@"country"]];
-            [midias addObject:musica];
+            [musicas addObject:musica];
         }
         
         //EBOOK
@@ -92,7 +92,7 @@ static bool isFirstAccess = YES;
             Ebook *ebook = [[Ebook alloc]init];
             setMidia(ebook, item);
             [ebook setRating:[item objectForKey:@"averageUserRating"]];
-            [midias addObject:ebook];
+            [ebooks addObject:ebook];
         }
         
         //PODCAST
@@ -100,15 +100,15 @@ static bool isFirstAccess = YES;
             Podcast *podcast = [[Podcast alloc]init];
             setMidia(podcast,item);
             [podcast setGeneroPrincipal:[item objectForKey:@"primaryGenreName"]];
-            [midias addObject:podcast];
+            [podcasts addObject:podcast];
         }
         
     }
     
-//    [midias addObject:filmes];
-//    [midias addObject:musicas];
-//    [midias addObject:ebooks];
-//    [midias addObject:podcasts];
+    [midias addObject:filmes];
+    [midias addObject:musicas];
+    [midias addObject:ebooks];
+    [midias addObject:podcasts];
     
     return midias;
 }

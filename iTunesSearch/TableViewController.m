@@ -25,10 +25,10 @@
 @implementation TableViewController
 
 NSString *termo = @"";
-NSMutableArray *filmes;
-NSMutableArray *musicas;
-NSMutableArray *podcasts;
-NSMutableArray *ebooks;
+//NSMutableArray *filmes;
+//NSMutableArray *musicas;
+//NSMutableArray *podcasts;
+//NSMutableArray *ebooks;
 
 
 - (void)viewDidLoad {
@@ -43,14 +43,14 @@ NSMutableArray *ebooks;
     
     iTunesManager *itunes = [iTunesManager sharedInstance];
     midias = [itunes buscarMidias:@"Apple"];
-    filmes = [[NSMutableArray alloc] init];
-    musicas = [[NSMutableArray alloc] init];
-    podcasts = [[NSMutableArray alloc] init];
-    ebooks = [[NSMutableArray alloc] init];
+//    filmes = [[NSMutableArray alloc] init];
+//    musicas = [[NSMutableArray alloc] init];
+//    podcasts = [[NSMutableArray alloc] init];
+//    ebooks = [[NSMutableArray alloc] init];
     
     
     
-    [self categorizaMidia];
+    //[self categorizaMidia];
     
     
     
@@ -72,24 +72,19 @@ NSMutableArray *ebooks;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == 0)
-        return filmes.count;
-    if (section == 1)
-        return musicas.count;
-    if (section == 2)
-        return podcasts.count;
-    if (section == 3)
-        return ebooks.count;
-    return 0;
+    
+    return [[midias objectAtIndex:section] count];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TableViewCell *celula = [self.tableview dequeueReusableCellWithIdentifier:@"celulaPadrao"];
     
-    //long row = [indexPath row];
+    NSArray *media = [[NSArray alloc]initWithArray:[midias objectAtIndex:indexPath.section]];
+    
+    long row = [indexPath row];
     if(indexPath.section==0){
         //TableViewCell *celula = [self.tableview dequeueReusableCellWithIdentifier:@"celulaPadrao"];
-        Filme *filme = [filmes objectAtIndex:[indexPath row]];
+        Filme *filme = [media objectAtIndex:[indexPath row]];
         [celula.nome setText:filme.nome];
         [celula.artista setText:filme.artista];
         [celula.tipo setText:@"Filme"];
@@ -102,7 +97,7 @@ NSMutableArray *ebooks;
     }
     if(indexPath.section==1){
         //MusicTableViewCell *celula = [self.tableview dequeueReusableCellWithIdentifier:@"musicCell"];
-        Musica *musica = [musicas objectAtIndex:[indexPath row]];
+        Musica *musica = [media objectAtIndex:[indexPath row]];
         [celula.nome setText:musica.nome];
         [celula.artista setText:musica.artista];
         [celula.tipo setText:@"Musica"];
@@ -115,7 +110,7 @@ NSMutableArray *ebooks;
     }
     if(indexPath.section==2){
         //TableViewCell *celula = [self.tableview dequeueReusableCellWithIdentifier:@"celulaPadrao"];
-        Podcast *podcast = [podcasts objectAtIndex:[indexPath row]];
+        Podcast *podcast = [media objectAtIndex:[indexPath row]];
         [celula.nome setText:podcast.nome];
         [celula.artista setText:podcast.artista];
         [celula.tipo setText:@"Podcast"];
@@ -127,7 +122,7 @@ NSMutableArray *ebooks;
     }
     if(indexPath.section==3){
         //TableViewCell *celula = [self.tableview dequeueReusableCellWithIdentifier:@"celulaPadrao"];
-        Ebook *ebook = [ebooks objectAtIndex:[indexPath row]];
+        Ebook *ebook = [media objectAtIndex:[indexPath row]];
         [celula.nome setText:ebook.nome];
         [celula.artista setText:ebook.artista];
         [celula.tipo setText:@"Ebook"];
@@ -154,7 +149,7 @@ NSMutableArray *ebooks;
 - (IBAction)buscar:(id)sender {
     iTunesManager *itunes = [iTunesManager sharedInstance];
     midias =[itunes buscarMidias:self.busca.text];
-    [self categorizaMidia];
+    //[self categorizaMidia];
     [self.tableview reloadData];
     [_busca resignFirstResponder];
     self.busca.text = @"";
@@ -172,25 +167,25 @@ NSMutableArray *ebooks;
     return @"undefined";
 }
 
--(void)categorizaMidia{
-    filmes = [[NSMutableArray alloc]init];
-    musicas = [[NSMutableArray alloc]init];
-    podcasts = [[NSMutableArray alloc]init];
-    ebooks = [[NSMutableArray alloc]init];
-    for(int i=0; i<midias.count;i++){
-        if([[midias objectAtIndex:i] isMemberOfClass:[Filme class]]){
-            [filmes addObject:[midias objectAtIndex:i]];
-        }
-        if([[midias objectAtIndex:i] isMemberOfClass:[Musica class]]){
-            [musicas addObject:[midias objectAtIndex:i]];
-        }
-        if([[midias objectAtIndex:i] isMemberOfClass:[Podcast class]]){
-            [podcasts addObject:[midias objectAtIndex:i]];
-        }
-        if([[midias objectAtIndex:i] isMemberOfClass:[Ebook class]]){
-            [ebooks addObject:[midias objectAtIndex:i]];
-        }
-    }
-}
+//-(void)categorizaMidia{
+//    filmes = [[NSMutableArray alloc]init];
+//    musicas = [[NSMutableArray alloc]init];
+//    podcasts = [[NSMutableArray alloc]init];
+//    ebooks = [[NSMutableArray alloc]init];
+//    for(int i=0; i<midias.count;i++){
+//        if([[midias objectAtIndex:i] isMemberOfClass:[Filme class]]){
+//            [filmes addObject:[midias objectAtIndex:i]];
+//        }
+//        if([[midias objectAtIndex:i] isMemberOfClass:[Musica class]]){
+//            [musicas addObject:[midias objectAtIndex:i]];
+//        }
+//        if([[midias objectAtIndex:i] isMemberOfClass:[Podcast class]]){
+//            [podcasts addObject:[midias objectAtIndex:i]];
+//        }
+//        if([[midias objectAtIndex:i] isMemberOfClass:[Ebook class]]){
+//            [ebooks addObject:[midias objectAtIndex:i]];
+//        }
+//    }
+//}
 
 @end
