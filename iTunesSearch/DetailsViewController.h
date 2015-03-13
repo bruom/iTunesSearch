@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Midia.h"
 
 @interface DetailsViewController : UIViewController
 
@@ -15,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *artista;
 @property (weak, nonatomic) IBOutlet UILabel *tipo;
 @property (weak, nonatomic) IBOutlet UILabel *preco;
+@property (weak, nonatomic) Midia *midia;
 
 
 @end

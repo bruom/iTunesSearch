@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1513F4AB1AB347240015FBAD /* MediaIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1513F4AA1AB347240015FBAD /* MediaIcons.xcassets */; };
 		1531ED6B1AB0C54700CA5FCD /* MusicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1531ED691AB0C54700CA5FCD /* MusicTableViewCell.m */; };
 		1531ED6C1AB0C54700CA5FCD /* MusicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1531ED6A1AB0C54700CA5FCD /* MusicTableViewCell.xib */; };
 		1531ED6F1AB0C95E00CA5FCD /* Midia.m in Sources */ = {isa = PBXBuildFile; fileRef = 1531ED6E1AB0C95E00CA5FCD /* Midia.m */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1513F4AA1AB347240015FBAD /* MediaIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MediaIcons.xcassets; sourceTree = "<group>"; };
 		1531ED681AB0C54700CA5FCD /* MusicTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicTableViewCell.h; sourceTree = "<group>"; };
 		1531ED691AB0C54700CA5FCD /* MusicTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicTableViewCell.m; sourceTree = "<group>"; };
 		1531ED6A1AB0C54700CA5FCD /* MusicTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MusicTableViewCell.xib; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				92C21CD91AAE75B30052ABE6 /* iTunesManager.h */,
 				92C21CDA1AAE75B30052ABE6 /* iTunesManager.m */,
 				92C21CC01AAE757A0052ABE6 /* Images.xcassets */,
+				1513F4AA1AB347240015FBAD /* MediaIcons.xcassets */,
 				92C21CB31AAE757A0052ABE6 /* Supporting Files */,
 			);
 			path = iTunesSearch;
@@ -278,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92C21CC11AAE757A0052ABE6 /* Images.xcassets in Resources */,
+				1513F4AB1AB347240015FBAD /* MediaIcons.xcassets in Resources */,
 				92C21CE21AAE76930052ABE6 /* TableViewCell.xib in Resources */,
 				1531ED751AB0D4A500CA5FCD /* DetailsViewController.xib in Resources */,
 				15B2BE131AB1F7EC00E1C40D /* TableView.xib in Resources */,

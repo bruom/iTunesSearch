@@ -15,5 +15,6 @@
 @property (nonatomic, strong) NSString *artista;
 @property (nonatomic, strong) NSNumber *preco;
 @property (nonatomic, strong) NSString *urlImg;
+@property (nonatomic, strong) NSString *urlGrande;
 
 @end

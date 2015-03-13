@@ -20,32 +20,40 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iaq-I7-h9H">
-                    <rect key="frame" x="20" y="27" width="312" height="276"/>
+                    <rect key="frame" x="20" y="100" width="100" height="100"/>
                     <constraints>
+                        <constraint firstAttribute="height" constant="100" id="OQF-Cp-xXZ"/>
+                        <constraint firstAttribute="width" constant="100" id="Zwb-d4-csf"/>
                         <constraint firstAttribute="width" constant="312" id="eVQ-uP-4oa"/>
                         <constraint firstAttribute="height" constant="276" id="uGz-zV-hnv"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="eVQ-uP-4oa"/>
+                            <exclude reference="uGz-zV-hnv"/>
+                        </mask>
+                    </variation>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Artista" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1o-1M-oby">
-                    <rect key="frame" x="34" y="391" width="232" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artista" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1o-1M-oby">
+                    <rect key="frame" x="34" y="291.5" width="49.5" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tipo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jME-S4-hIS">
-                    <rect key="frame" x="34" y="448" width="232" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tipo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jME-S4-hIS">
+                    <rect key="frame" x="34" y="348" width="34" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Preco" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGZ-es-5cJ">
-                    <rect key="frame" x="34" y="517" width="232" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preco" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGZ-es-5cJ">
+                    <rect key="frame" x="34" y="426.5" width="45" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Nome" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Shn-lh-UgN">
-                    <rect key="frame" x="34" y="331" width="232" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Shn-lh-UgN">
+                    <rect key="frame" x="34" y="228" width="46" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
@@ -54,12 +62,13 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Shn-lh-UgN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="34" id="3Nh-nc-rql"/>
+                <constraint firstAttribute="trailing" secondItem="iaq-I7-h9H" secondAttribute="trailing" constant="20" id="4Ni-ec-kvP"/>
                 <constraint firstItem="Shn-lh-UgN" firstAttribute="leading" secondItem="iaq-I7-h9H" secondAttribute="trailing" constant="18" id="6NL-oO-3Jd"/>
                 <constraint firstItem="uGZ-es-5cJ" firstAttribute="top" secondItem="jME-S4-hIS" secondAttribute="bottom" constant="58" id="7Mo-hQ-4Ax"/>
                 <constraint firstItem="Shn-lh-UgN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" symbolic="YES" id="F1o-W5-kdI"/>
                 <constraint firstItem="iaq-I7-h9H" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="FVc-Ch-pSq"/>
                 <constraint firstItem="z1o-1M-oby" firstAttribute="top" secondItem="Shn-lh-UgN" secondAttribute="bottom" constant="43" id="HVd-w1-jbA"/>
-                <constraint firstItem="iaq-I7-h9H" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="27" id="JEz-1q-2rt"/>
+                <constraint firstItem="iaq-I7-h9H" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="JEz-1q-2rt"/>
                 <constraint firstItem="jME-S4-hIS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="34" id="Te4-dy-CMk"/>
                 <constraint firstItem="jME-S4-hIS" firstAttribute="top" secondItem="z1o-1M-oby" secondAttribute="bottom" constant="36" id="omR-dA-8KT"/>
                 <constraint firstItem="z1o-1M-oby" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="34" id="p6J-MH-Faa"/>
@@ -69,6 +78,7 @@
             </constraints>
             <variation key="default">
                 <mask key="constraints">
+                    <exclude reference="4Ni-ec-kvP"/>
                     <exclude reference="6NL-oO-3Jd"/>
                     <exclude reference="F1o-W5-kdI"/>
                     <exclude reference="ze0-5E-J0V"/>

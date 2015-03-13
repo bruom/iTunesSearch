@@ -18,21 +18,20 @@
 
 @interface TableViewController () {
     NSArray *midias;
+    NSUserDefaults *useDef;
+    NSString *termo;
 }
 
 @end
 
 @implementation TableViewController
 
-NSString *termo = @"";
-//NSMutableArray *filmes;
-//NSMutableArray *musicas;
-//NSMutableArray *podcasts;
-//NSMutableArray *ebooks;
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    useDef = [NSUserDefaults standardUserDefaults];
     
     [_tableview setDelegate: self];
     _tableview.dataSource = self;
@@ -42,16 +41,15 @@ NSString *termo = @"";
     //[self.tableview registerNib:nib forCellReuseIdentifier:@"musicCell"];
     
     iTunesManager *itunes = [iTunesManager sharedInstance];
+    if(useDef==nil){
+        termo = @"Apple";
+    }
+    else{
+        termo = [[useDef stringForKey:@"busca"] stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+    }
     midias = [itunes buscarMidias:@"Apple"];
-//    filmes = [[NSMutableArray alloc] init];
-//    musicas = [[NSMutableArray alloc] init];
-//    podcasts = [[NSMutableArray alloc] init];
-//    ebooks = [[NSMutableArray alloc] init];
-    
-    
-    
-    //[self categorizaMidia];
-    
+
+    _tableview.contentInset = UIEdgeInsetsMake(-64, 0, 0, 0);
     
     
     
@@ -138,6 +136,7 @@ NSString *termo = @"";
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     DetailsViewController *details = [[DetailsViewController alloc]init];
+    [details setMidia:[[ midias objectAtIndex:indexPath.section]objectAtIndex:indexPath.row]];
     [self.navigationController pushViewController:details animated:YES];
 }
 
@@ -152,19 +151,47 @@ NSString *termo = @"";
     //[self categorizaMidia];
     [self.tableview reloadData];
     [_busca resignFirstResponder];
+    [useDef setObject:self.busca.text forKey:@"busca"];
     self.busca.text = @"";
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    if (section == 0)
-        return @"Filmes";
-    if (section == 1)
-        return @"Musicas";
-    if (section == 2)
-        return @"Podcasts";
-    if (section == 3)
-        return @"Ebooks";
-    return @"undefined";
+//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+//    if (section == 0)
+//        return @"Filmes";
+//    if (section == 1)
+//        return @"Musicas";
+//    if (section == 2)
+//        return @"Podcasts";
+//    if (section == 3)
+//        return @"Ebooks";
+//    return @"undefined";
+//}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, -20, tableView.frame.size.width, 18)];
+    UIImageView *imgView = [[UIImageView alloc]initWithFrame:CGRectMake(5, 3, 16, 16)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(25, 2, tableView.frame.size.width, 18)];
+    [label setFont:[UIFont boldSystemFontOfSize:12]];
+    if (section == 0){
+        [label setText:@"Filmes"];
+        imgView.image = [UIImage imageNamed:@"filme"];
+    }
+    if (section == 1){
+        [label setText:@"Musicas"];
+        imgView.image = [UIImage imageNamed:@"music"];
+    }
+    if (section == 2){
+        [label setText:@"Podcasts"];
+        imgView.image = [UIImage imageNamed:@"podcast"];
+    }
+    if (section == 3){
+        [label setText:@"Ebooks"];
+        imgView.image = [UIImage imageNamed:@"ebook"];
+    }
+    [header addSubview:label];
+    [header addSubview:imgView];
+    [header setBackgroundColor:[UIColor grayColor]];
+    return header;
 }
 
 //-(void)categorizaMidia{
