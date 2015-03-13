@@ -37,7 +37,7 @@ static bool isFirstAccess = YES;
     if (!termo) {
         termo = @"";
     }
-    
+    termo = [termo stringByReplacingOccurrencesOfString:@" " withString:@"+"];
     NSString *url = [NSString stringWithFormat:@"https://itunes.apple.com/search?term=%@&media=all&limit=200", termo];
     NSData *jsonData = [NSData dataWithContentsOfURL: [NSURL URLWithString:url]];
     
@@ -45,12 +45,13 @@ static bool isFirstAccess = YES;
     NSDictionary *resultado = [NSJSONSerialization JSONObjectWithData:jsonData
                                                               options:NSJSONReadingMutableContainers
                                                                 error:&error];
+    
     if (error) {
         NSLog(@"Não foi possível fazer a busca. ERRO: %@", error);
         return nil;
     }
     
-    NSArray *resultados = [resultado objectForKey:@"results"];
+    NSMutableArray *resultados = [resultado objectForKey:@"results"];
     NSMutableArray *midias = [[NSMutableArray alloc]init];
     NSMutableArray *filmes = [[NSMutableArray alloc] init];
     NSMutableArray *musicas = [[NSMutableArray alloc] init];
@@ -93,6 +94,7 @@ static bool isFirstAccess = YES;
             Ebook *ebook = [[Ebook alloc]init];
             setMidia(ebook, item);
             [ebook setRating:[item objectForKey:@"averageUserRating"]];
+            [ebook setPreco:[item objectForKey:@"price"]];
             [ebooks addObject:ebook];
         }
         

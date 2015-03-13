@@ -20,10 +20,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iaq-I7-h9H">
-                    <rect key="frame" x="20" y="100" width="100" height="100"/>
+                    <rect key="frame" x="20" y="20" width="200" height="200"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="100" id="OQF-Cp-xXZ"/>
-                        <constraint firstAttribute="width" constant="100" id="Zwb-d4-csf"/>
+                        <constraint firstAttribute="height" constant="200" id="OQF-Cp-xXZ"/>
+                        <constraint firstAttribute="width" constant="200" id="Zwb-d4-csf"/>
                         <constraint firstAttribute="width" constant="312" id="eVQ-uP-4oa"/>
                         <constraint firstAttribute="height" constant="276" id="uGz-zV-hnv"/>
                     </constraints>
@@ -35,25 +35,25 @@
                     </variation>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artista" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1o-1M-oby">
-                    <rect key="frame" x="34" y="291.5" width="49.5" height="20.5"/>
+                    <rect key="frame" x="34" y="311.5" width="49.5" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tipo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jME-S4-hIS">
-                    <rect key="frame" x="34" y="348" width="34" height="20.5"/>
+                    <rect key="frame" x="34" y="368" width="34" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preco" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGZ-es-5cJ">
-                    <rect key="frame" x="34" y="426.5" width="45" height="20.5"/>
+                    <rect key="frame" x="34" y="446.5" width="45" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Shn-lh-UgN">
-                    <rect key="frame" x="34" y="228" width="46" height="20.5"/>
+                    <rect key="frame" x="34" y="248" width="46" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
@@ -68,7 +68,7 @@
                 <constraint firstItem="Shn-lh-UgN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" symbolic="YES" id="F1o-W5-kdI"/>
                 <constraint firstItem="iaq-I7-h9H" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="FVc-Ch-pSq"/>
                 <constraint firstItem="z1o-1M-oby" firstAttribute="top" secondItem="Shn-lh-UgN" secondAttribute="bottom" constant="43" id="HVd-w1-jbA"/>
-                <constraint firstItem="iaq-I7-h9H" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="JEz-1q-2rt"/>
+                <constraint firstItem="iaq-I7-h9H" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="JEz-1q-2rt"/>
                 <constraint firstItem="jME-S4-hIS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="34" id="Te4-dy-CMk"/>
                 <constraint firstItem="jME-S4-hIS" firstAttribute="top" secondItem="z1o-1M-oby" secondAttribute="bottom" constant="36" id="omR-dA-8KT"/>
                 <constraint firstItem="z1o-1M-oby" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="34" id="p6J-MH-Faa"/>

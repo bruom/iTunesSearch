@@ -31,31 +31,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationItem.title = @"iTunes Search";
+    
     useDef = [NSUserDefaults standardUserDefaults];
+    [useDef synchronize];
     
     [_tableview setDelegate: self];
     _tableview.dataSource = self;
     
     UINib *nib = [UINib nibWithNibName:@"TableViewCell" bundle:nil];
     [self.tableview registerNib:nib forCellReuseIdentifier:@"celulaPadrao"];
-    //[self.tableview registerNib:nib forCellReuseIdentifier:@"musicCell"];
     
     iTunesManager *itunes = [iTunesManager sharedInstance];
-    if(useDef==nil){
-        termo = @"Apple";
-    }
-    else{
-        termo = [[useDef stringForKey:@"busca"] stringByReplacingOccurrencesOfString:@" " withString:@"+"];
-    }
-    midias = [itunes buscarMidias:@"Apple"];
+//    if(useDef==nil){
+//        termo = @"Apple";
+//    }
+//    else{
+//        termo = [[useDef valueForKey:@"busca"] stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+//    }
+    midias = [itunes buscarMidias:[useDef valueForKey:@"busca"]];
 
     _tableview.contentInset = UIEdgeInsetsMake(-64, 0, 0, 0);
     
     
-    
-    
-//#warning Necessario para que a table view tenha um espaco em relacao ao topo, pois caso contrario o texto ficara atras da barra superior
-    //self.tableview.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.tableview.bounds.size.width, 0.0f)];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -79,7 +78,6 @@
     
     NSArray *media = [[NSArray alloc]initWithArray:[midias objectAtIndex:indexPath.section]];
     
-    long row = [indexPath row];
     if(indexPath.section==0){
         //TableViewCell *celula = [self.tableview dequeueReusableCellWithIdentifier:@"celulaPadrao"];
         Filme *filme = [media objectAtIndex:[indexPath row]];
@@ -147,25 +145,15 @@
 
 - (IBAction)buscar:(id)sender {
     iTunesManager *itunes = [iTunesManager sharedInstance];
-    midias =[itunes buscarMidias:self.busca.text];
+    midias =[itunes buscarMidias:[self.busca.text  stringByReplacingOccurrencesOfString:@" " withString:@"+"]];
     //[self categorizaMidia];
     [self.tableview reloadData];
     [_busca resignFirstResponder];
     [useDef setObject:self.busca.text forKey:@"busca"];
+    [useDef synchronize];
     self.busca.text = @"";
 }
 
-//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-//    if (section == 0)
-//        return @"Filmes";
-//    if (section == 1)
-//        return @"Musicas";
-//    if (section == 2)
-//        return @"Podcasts";
-//    if (section == 3)
-//        return @"Ebooks";
-//    return @"undefined";
-//}
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, -20, tableView.frame.size.width, 18)];
@@ -194,25 +182,6 @@
     return header;
 }
 
-//-(void)categorizaMidia{
-//    filmes = [[NSMutableArray alloc]init];
-//    musicas = [[NSMutableArray alloc]init];
-//    podcasts = [[NSMutableArray alloc]init];
-//    ebooks = [[NSMutableArray alloc]init];
-//    for(int i=0; i<midias.count;i++){
-//        if([[midias objectAtIndex:i] isMemberOfClass:[Filme class]]){
-//            [filmes addObject:[midias objectAtIndex:i]];
-//        }
-//        if([[midias objectAtIndex:i] isMemberOfClass:[Musica class]]){
-//            [musicas addObject:[midias objectAtIndex:i]];
-//        }
-//        if([[midias objectAtIndex:i] isMemberOfClass:[Podcast class]]){
-//            [podcasts addObject:[midias objectAtIndex:i]];
-//        }
-//        if([[midias objectAtIndex:i] isMemberOfClass:[Ebook class]]){
-//            [ebooks addObject:[midias objectAtIndex:i]];
-//        }
-//    }
-//}
+
 
 @end

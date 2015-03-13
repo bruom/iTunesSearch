@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "Midia.h"
+#import "Filme.h"
+#import "Musica.h"
+#import "Ebook.h"
+#import "Podcast.h"
 
 @interface DetailsViewController : UIViewController
 
