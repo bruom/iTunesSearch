@@ -146,7 +146,19 @@
 
 - (IBAction)buscar:(id)sender {
     iTunesManager *itunes = [iTunesManager sharedInstance];
-    midias =[itunes buscarMidias:[self.busca.text  stringByReplacingOccurrencesOfString:@" " withString:@"+"]];
+    
+    NSError *erroRegex=nil;
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"^[a-z]([a-z]| |\\+|\\(|\\)|'|\\^)*$" options:NSRegularExpressionCaseInsensitive error:&erroRegex];
+    
+    termo = self.busca.text;
+    
+    if(![regex numberOfMatchesInString:termo options:0 range:NSMakeRange(0, termo.length)]){
+        UIAlertView *termoInvalido = [[UIAlertView alloc]initWithTitle:NSLocalizedString(@"Busca invalida!",nil) message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [termoInvalido show];
+        return;
+    }
+    
+    midias =[itunes buscarMidias:[termo stringByReplacingOccurrencesOfString:@" " withString:@"+"]];
     //[self categorizaMidia];
     [self.tableview reloadData];
     [_busca resignFirstResponder];
