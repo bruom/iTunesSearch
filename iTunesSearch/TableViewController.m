@@ -32,6 +32,7 @@
     [super viewDidLoad];
     
     self.navigationItem.title = @"iTunes Search";
+    [self.botaoBusca setTitle:NSLocalizedString(@"Buscar", nil) forState:UIControlStateNormal];
     
     useDef = [NSUserDefaults standardUserDefaults];
     [useDef synchronize];
@@ -51,7 +52,7 @@
 //    }
     midias = [itunes buscarMidias:[useDef valueForKey:@"busca"]];
 
-    _tableview.contentInset = UIEdgeInsetsMake(-64, 0, 0, 0);
+//    _tableview.contentInset = UIEdgeInsetsMake(-64, 0, 0, 0);
     
     
 
@@ -83,8 +84,8 @@
         Filme *filme = [media objectAtIndex:[indexPath row]];
         [celula.nome setText:filme.nome];
         [celula.artista setText:filme.artista];
-        [celula.tipo setText:@"Filme"];
-        [celula.preco setText:[NSString stringWithFormat:@"Preço: %@",filme.preco]];
+        [celula.tipo setText:NSLocalizedString(@"Filme",nil)];
+        [celula.preco setText:[NSString stringWithFormat:NSLocalizedString(@"Preço: %@",nil),filme.preco]];
         NSURL *url = [NSURL URLWithString:filme.urlImg];
         NSData *imgData = [NSData dataWithContentsOfURL:url];
         UIImage *img = [UIImage imageWithData:imgData];
@@ -96,8 +97,8 @@
         Musica *musica = [media objectAtIndex:[indexPath row]];
         [celula.nome setText:musica.nome];
         [celula.artista setText:musica.artista];
-        [celula.tipo setText:@"Musica"];
-        [celula.preco setText:[NSString stringWithFormat:@"Preço: %@",musica.preco]];
+        [celula.tipo setText:NSLocalizedString(@"Musica",nil)];
+        [celula.preco setText:[NSString stringWithFormat:NSLocalizedString(@"Preço: %@",nil),musica.preco]];
         NSURL *url = [NSURL URLWithString:musica.urlImg];
         NSData *imgData = [NSData dataWithContentsOfURL:url];
         UIImage *img = [UIImage imageWithData:imgData];
@@ -109,8 +110,8 @@
         Podcast *podcast = [media objectAtIndex:[indexPath row]];
         [celula.nome setText:podcast.nome];
         [celula.artista setText:podcast.artista];
-        [celula.tipo setText:@"Podcast"];
-        [celula.preco setText:[NSString stringWithFormat:@"Preço: %@",podcast.preco]];
+        [celula.tipo setText:NSLocalizedString(@"Podcast",nil)];
+        [celula.preco setText:[NSString stringWithFormat:NSLocalizedString(@"Preço: %@",nil),podcast.preco]];
         NSURL *url = [NSURL URLWithString:podcast.urlImg];
         NSData *imgData = [NSData dataWithContentsOfURL:url];
         UIImage *img = [UIImage imageWithData:imgData];
@@ -121,8 +122,8 @@
         Ebook *ebook = [media objectAtIndex:[indexPath row]];
         [celula.nome setText:ebook.nome];
         [celula.artista setText:ebook.artista];
-        [celula.tipo setText:@"Ebook"];
-        [celula.preco setText:[NSString stringWithFormat:@"Preço: %@",ebook.preco]];
+        [celula.tipo setText:NSLocalizedString(@"Ebook",nil)];
+        [celula.preco setText:[NSString stringWithFormat:NSLocalizedString(@"Preço: %@",nil),ebook.preco]];
         NSURL *url = [NSURL URLWithString:ebook.urlImg];
         NSData *imgData = [NSData dataWithContentsOfURL:url];
         UIImage *img = [UIImage imageWithData:imgData];
@@ -161,19 +162,19 @@
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(25, 2, tableView.frame.size.width, 18)];
     [label setFont:[UIFont boldSystemFontOfSize:12]];
     if (section == 0){
-        [label setText:@"Filmes"];
+        [label setText:NSLocalizedString(@"Filmes", nil)];
         imgView.image = [UIImage imageNamed:@"filme"];
     }
     if (section == 1){
-        [label setText:@"Musicas"];
+        [label setText:NSLocalizedString(@"Musicas", nil)];
         imgView.image = [UIImage imageNamed:@"music"];
     }
     if (section == 2){
-        [label setText:@"Podcasts"];
+        [label setText:NSLocalizedString(@"Podcasts", nil)];
         imgView.image = [UIImage imageNamed:@"podcast"];
     }
     if (section == 3){
-        [label setText:@"Ebooks"];
+        [label setText:NSLocalizedString(@"Ebooks", nil)];
         imgView.image = [UIImage imageNamed:@"ebook"];
     }
     [header addSubview:label];

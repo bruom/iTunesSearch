@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  iTunesSearch
+
+  Created by Bruno Omella Mainieri on 3/15/15.
+  Copyright (c) 2015 joaquim. All rights reserved.
+*/
+
+"Buscar"= "Rechercher";
+
+"Filmes"= "Films";
+"Filme"= "Film";
+"Musica"= "Musique";
+"Musicas"= "Musique";
+"Podcast"="Podcast";
+"Podcasts"="Podcasts";
+"Ebook"="Ebook";
+"Ebooks"="Ebooks";
+
+"Preço: %@"="Prix: %@";

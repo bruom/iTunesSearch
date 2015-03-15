@@ -21,23 +21,23 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     if([midia isMemberOfClass:[Filme class]]){
-        self.navigationItem.title = @"Filme";
-        self.tipo.text = @"Filme";
+        self.navigationItem.title = NSLocalizedString(@"Filme",nil);
+        self.tipo.text = NSLocalizedString(@"Filme",nil);
     }
     if([midia isMemberOfClass:[Musica class]]){
-        self.navigationItem.title = @"Musica";
-        self.tipo.text = @"Musica";
+        self.navigationItem.title = NSLocalizedString(@"Musica",nil);
+        self.tipo.text = NSLocalizedString(@"Musica",nil);
     }
     if([midia isMemberOfClass:[Podcast class]]){
-        self.navigationItem.title = @"Podcast";
-        self.tipo.text = @"Podcast";
+        self.navigationItem.title = NSLocalizedString(@"Podcast",nil);
+        self.tipo.text = NSLocalizedString(@"Podcast",nil);
     }
     if([midia isMemberOfClass:[Ebook class]]){
-        self.navigationItem.title = @"Ebook";
-        self.tipo.text = @"Ebook";
+        self.navigationItem.title =  NSLocalizedString(@"Ebook",nil);
+        self.tipo.text = NSLocalizedString(@"Ebook",nil);
     }
     self.nome.text = midia.nome;
-    self.preco.text = [NSString stringWithFormat:@"Preço: %@",midia.preco];
+    self.preco.text = [NSString stringWithFormat:NSLocalizedString(@"Preço: %@",nil),midia.preco];
     self.artista.text = midia.artista;
     NSURL *url = [NSURL URLWithString:midia.urlGrande];
     NSData *imgData = [NSData dataWithContentsOfURL:url];

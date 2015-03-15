@@ -2,10 +2,13 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TableViewController">
             <connections>
+                <outlet property="botaoBusca" destination="TBw-br-Dbx" id="Oya-6R-U98"/>
                 <outlet property="busca" destination="dEk-6T-NxH" id="qcx-83-ROS"/>
                 <outlet property="tableview" destination="RpU-8P-r5u" id="w9F-Ab-t8g"/>
                 <outlet property="view" destination="hZi-oB-f5l" id="pJ1-Ve-wlk"/>
@@ -16,44 +19,72 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="RpU-8P-r5u">
-                    <rect key="frame" x="0.0" y="148" width="600" height="452"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </tableView>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dEk-6T-NxH">
-                    <rect key="frame" x="27" y="80" width="425" height="30"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBw-br-Dbx">
-                    <rect key="frame" x="491" y="80" width="80" height="30"/>
+                    <rect key="frame" x="510" y="71" width="80" height="30"/>
                     <constraints>
+                        <constraint firstAttribute="height" constant="30" id="BAW-SR-rpg"/>
                         <constraint firstAttribute="width" constant="80" id="hdi-9Z-CSH"/>
+                        <constraint firstAttribute="width" constant="80" id="tqh-jk-UPJ"/>
                     </constraints>
                     <state key="normal" title="Buscar">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="hdi-9Z-CSH"/>
+                        </mask>
+                    </variation>
                     <connections>
                         <action selector="buscar:" destination="-1" eventType="touchUpInside" id="3sG-hC-FQA"/>
                     </connections>
                 </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dEk-6T-NxH">
+                    <rect key="frame" x="10" y="71" width="495" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="RpU-8P-r5u">
+                    <rect key="frame" x="0.0" y="106" width="600" height="494"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="dEk-6T-NxH" firstAttribute="top" secondItem="hZi-oB-f5l" secondAttribute="top" constant="80" id="02n-aH-Ko2"/>
+                <constraint firstItem="dEk-6T-NxH" firstAttribute="top" secondItem="hZi-oB-f5l" secondAttribute="top" constant="71" id="0BU-eb-V4V"/>
+                <constraint firstItem="dEk-6T-NxH" firstAttribute="centerY" secondItem="TBw-br-Dbx" secondAttribute="centerY" id="0Vk-xE-Wl9"/>
+                <constraint firstItem="dEk-6T-NxH" firstAttribute="top" secondItem="hZi-oB-f5l" secondAttribute="top" constant="71" id="BQy-uV-qTg"/>
+                <constraint firstItem="RpU-8P-r5u" firstAttribute="top" secondItem="dEk-6T-NxH" secondAttribute="bottom" constant="5" id="IbI-uw-0qz"/>
+                <constraint firstAttribute="trailing" secondItem="RpU-8P-r5u" secondAttribute="trailing" id="QoU-QB-8cY"/>
                 <constraint firstItem="TBw-br-Dbx" firstAttribute="top" secondItem="hZi-oB-f5l" secondAttribute="top" constant="80" id="Qob-Ws-3Lt"/>
+                <constraint firstAttribute="bottom" secondItem="RpU-8P-r5u" secondAttribute="bottom" id="aKV-9g-47X"/>
                 <constraint firstAttribute="trailing" secondItem="TBw-br-Dbx" secondAttribute="trailing" constant="29" id="awg-51-hCq"/>
                 <constraint firstAttribute="bottom" secondItem="RpU-8P-r5u" secondAttribute="bottom" id="dv1-yY-Mnh"/>
                 <constraint firstItem="dEk-6T-NxH" firstAttribute="leading" secondItem="hZi-oB-f5l" secondAttribute="leading" constant="27" id="fbS-hA-6Jg"/>
+                <constraint firstItem="dEk-6T-NxH" firstAttribute="centerY" secondItem="TBw-br-Dbx" secondAttribute="centerY" id="ggA-Bv-ZMa"/>
                 <constraint firstItem="RpU-8P-r5u" firstAttribute="top" secondItem="TBw-br-Dbx" secondAttribute="bottom" constant="38" id="ggs-je-cUU"/>
                 <constraint firstItem="RpU-8P-r5u" firstAttribute="leading" secondItem="hZi-oB-f5l" secondAttribute="leading" id="iVG-XG-Gzc"/>
-                <constraint firstItem="RpU-8P-r5u" firstAttribute="top" secondItem="dEk-6T-NxH" secondAttribute="bottom" constant="38" id="pNq-OE-TfL"/>
+                <constraint firstItem="RpU-8P-r5u" firstAttribute="leading" secondItem="hZi-oB-f5l" secondAttribute="leading" id="mKv-ys-fJG"/>
+                <constraint firstItem="RpU-8P-r5u" firstAttribute="top" secondItem="dEk-6T-NxH" secondAttribute="bottomMargin" constant="10" id="pNq-OE-TfL"/>
+                <constraint firstItem="TBw-br-Dbx" firstAttribute="leading" secondItem="dEk-6T-NxH" secondAttribute="trailing" constant="5" id="plW-3t-7E7"/>
                 <constraint firstItem="TBw-br-Dbx" firstAttribute="leading" secondItem="dEk-6T-NxH" secondAttribute="trailing" constant="39" id="rOS-ea-Bm5"/>
+                <constraint firstItem="dEk-6T-NxH" firstAttribute="leading" secondItem="hZi-oB-f5l" secondAttribute="leading" constant="10" id="rml-OV-Z6L"/>
                 <constraint firstAttribute="trailing" secondItem="RpU-8P-r5u" secondAttribute="trailing" id="wAX-uh-dWW"/>
+                <constraint firstAttribute="trailing" secondItem="TBw-br-Dbx" secondAttribute="trailing" constant="10" id="wpd-0k-2qm"/>
             </constraints>
+            <nil key="simulatedTopBarMetrics"/>
             <variation key="default">
                 <mask key="constraints">
+                    <exclude reference="0Vk-xE-Wl9"/>
+                    <exclude reference="BQy-uV-qTg"/>
+                    <exclude reference="fbS-hA-6Jg"/>
+                    <exclude reference="dv1-yY-Mnh"/>
                     <exclude reference="ggs-je-cUU"/>
+                    <exclude reference="iVG-XG-Gzc"/>
+                    <exclude reference="pNq-OE-TfL"/>
+                    <exclude reference="wAX-uh-dWW"/>
+                    <exclude reference="Qob-Ws-3Lt"/>
+                    <exclude reference="awg-51-hCq"/>
+                    <exclude reference="rOS-ea-Bm5"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="78" y="183"/>
